@@ -27,9 +27,11 @@ function receivedMessage(event) {
     var messageText = message.text;
     var messageAttachments = message.attachments;
 
-    sendTextMessage(senderID, messageText);
 
     userControl.isFound(senderID, function (err, found) {
+
+        console.log("isFoundCallBack\n\n");
+
         if (found) {
             sendTextMessage(senderID, messageText);
 
