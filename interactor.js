@@ -22,7 +22,7 @@ function receivedMessage(event) {
     console.log("Received message for user %d and page %d at %d with message:",
         senderID, recipientID, timeOfMessage);
     console.log(JSON.stringify(message));
-    
+
     var messageId = message.mid;
     var messageText = message.text;
     var messageAttachments = message.attachments;
@@ -204,7 +204,7 @@ function sendTextMessage(recipientId, messageText, callback) {
 function callSendAPI(messageData) {
     request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: ACCESS_TOKEN},
+        qs: {access_token: process.env.ACCESS_TOKEN},
         method: 'POST',
         json: messageData
 
