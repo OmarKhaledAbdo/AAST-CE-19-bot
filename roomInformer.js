@@ -43,7 +43,7 @@ function isVowel (c) {
                 console.log(event);
                 event.studentIDs.forEach(function(recipient) {
 
-                    var messageText = 'You have ' + isVowel(even.name.charAt(0)) ? 'an ' : 'a ' +  event.name +
+                    var messageText = 'You have ' + isVowel(event.name.charAt(0)) ? 'an ' : 'a ' +  event.name +
                         ' ' + event.type +  ' in room' + event.room + '\n'
 
                     fb.sendTextMessage(recipient, messageText);
