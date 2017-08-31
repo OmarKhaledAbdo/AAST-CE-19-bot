@@ -45,7 +45,7 @@ function isVowel (c) {
 
                     var messageText = 'You have ' + isVowel(event.name.charAt(0)) ? 'an ' : 'a ' +  event.name +
                         ' ' + event.type +  ' in room' + event.room + '\n'
-
+                    console.log(messageText)
                     fb.sendTextMessage(recipient, messageText);
 
                     //console.log("EventID " + event._id + "\n");
