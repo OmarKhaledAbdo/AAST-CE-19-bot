@@ -33,7 +33,7 @@ function run() {
             return weekdays[curTime.getDay()] + '-' + curTime.getHours();
         })();
 
-        console.log("CurTime " + curTime + "\n\n");
+        console.log("Current Time " + curTime + "\n\n");
 
         var cursor = events.find({date: curTime}).cursor();
 
@@ -42,13 +42,10 @@ function run() {
             event.studentIDs.forEach(function (recipient) {
 
                 var messageText = 'You have ' + (isVowel(event.name.charAt(0)) ? 'an ' : 'a ') + event.name +
-                    ' ' + event.type + ' in room ' + event.room
-                console.log(messageText)
-                fb.sendTextMessage(recipient, messageText);
+                    ' ' + event.type + ' in room ' + event.room + " after 5 minutes"
 
-                //console.log("EventID " + event._id + "\n");
+                fb.sendTextMessage(recipient, messageText);
                 users.findOneAndUpdate({ID: recipient}, {currentEvent: event._id}).exec();
-                //userControl.setUsersState(doc.group);
             });
         });
     });

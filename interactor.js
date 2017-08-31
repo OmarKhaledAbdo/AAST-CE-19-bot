@@ -1,6 +1,5 @@
 const userControl = require('./model/userControl.js');
 const request = require('request');
-const ACCESS_TOKEN = 'EAAbFrhuuKcoBAFVHirurUANJmdaxk95xeb7FynZC9Pzs2e4ATGtKm7gVhXrqpIxH41KjZCoVKR5PiDyFU5jBdAEeQNCEhIAyZBZCBKkIGbDGlIJi171RsdQRQkKDcxlTJ54jdOWZCj2tombZBvXNH1GkfU626kKWDgvR20kfyPZAgZDZD';
 const eventControl = require('./model/eventControl');
 
 function receivedPostback(event) {
@@ -30,24 +29,22 @@ function receivedMessage(event) {
 
     userControl.isFound(senderID, function (err, found) {
         if (found) {
-            console.log("Found\n");
             if (messageText) {
-                switch (messageText) {
+                switch (messageText.toLowerCase()) {
                     case 'notify':
                         receivedNotificationQuery(senderID);
                         break;
-                    case 'add':
-
-
+                    case 'unsubscribe':
+                        receivedUnsubscribeQuery(senderID);
+                        break;
                     default:
                         sendTextMessage(senderID, messageText);
                 }
             } else if (messageAttachments) {
                 sendTextMessage(senderID, "Message with attachment received");
             }
-
         } else {
-            messageText = "Nice to meet you\n";
+            messageText = 'Choose your registered courses';
             sendTextMessage(senderID, messageText);
             sendButtonMessage(senderID);
             getUserInfo(senderID, function (err, info) {
@@ -250,11 +247,11 @@ module.exports = {
 
 const userAction = require('./model/userAction');
 
-function receivedAddQuery(ID) {
-    userAction.AddCommitment(ID);
-
-}
 
 function receivedNotificationQuery(ID) {
     userAction.notifyArrival(ID);
+}
+
+function receivedUnsubscribeQuery (ID) {
+    userAction.unsubscribe(ID);
 }
