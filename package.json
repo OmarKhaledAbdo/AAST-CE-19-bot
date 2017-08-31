@@ -1,0 +1,22 @@
+{
+  "name": "facebookbot",
+  "version": "1.0.0",
+  "description": "Faebook bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "debug": "^2.6.8",
+    "express": "^4.15.3",
+    "inits": "^1.6.2",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.11.4",
+    "node-schedule": "^1.2.3",
+    "request": "^2.81.0",
+    "sync": "^0.2.5"
+  }
+}
