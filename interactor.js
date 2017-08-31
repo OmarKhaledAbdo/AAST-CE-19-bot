@@ -29,6 +29,8 @@ function receivedMessage(event) {
 
     userControl.isFound(senderID, function (err, found) {
         if (found) {
+            sendTextMessage(senderID, messageText);
+
             if (messageText) {
                 switch (messageText.toLowerCase()) {
                     case 'notify':

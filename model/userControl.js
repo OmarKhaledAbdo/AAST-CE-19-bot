@@ -19,7 +19,6 @@ function addUser(user) {
 }
 
 function isFound(ID, callback) {
-    //printAll();
     users.findOne({ID: ID},  function(err, result) {
         console.log(result);
         if(err) {
