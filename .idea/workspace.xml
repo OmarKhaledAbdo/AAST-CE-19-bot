@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cceabe06-1c84-4eab-99e2-0559102dd2e2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/play.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/semesterInfo.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.js" afterPath="$PROJECT_DIR$/bot.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interactor.js" afterPath="$PROJECT_DIR$/interactor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/userAction.js" afterPath="$PROJECT_DIR$/model/userAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/userControl.js" afterPath="$PROJECT_DIR$/model/userControl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roomInformer.js" afterPath="$PROJECT_DIR$/roomInformer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="interactor.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="interactor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interactor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="249" column="0" lean-forward="true" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+            <state relative-caret-position="258">
+              <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
               <folding>
                 <element signature="n#!!block;n#receivedPostback#0" expanded="false" />
                 <element signature="n#!!block;n#sendClassInitialisationButton#0" expanded="false" />
@@ -57,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bot.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bot.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bot.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
+            <state relative-caret-position="238">
+              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -179,10 +170,10 @@
         <option value="$PROJECT_DIR$/model/db.js" />
         <option value="$PROJECT_DIR$/model/userAction.js" />
         <option value="$PROJECT_DIR$/roomInformer.js" />
-        <option value="$PROJECT_DIR$/interactor.js" />
         <option value="$PROJECT_DIR$/model/userControl.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/bot.js" />
+        <option value="$PROJECT_DIR$/interactor.js" />
       </list>
     </option>
   </component>
@@ -312,7 +303,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86292000" />
+    <option name="totallyTimeSpent" value="86976000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -747,22 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interactor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="249" column="0" lean-forward="true" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#receivedPostback#0" expanded="false" />
-            <element signature="n#!!block;n#sendClassInitialisationButton#0" expanded="false" />
-            <element signature="n#!!block;n#sendButtonMessage#0" expanded="false" />
-            <element signature="n#!!block;n#sendGenericMessage#0" expanded="false" />
-            <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
-            <element signature="n#!!block;n#callSendAPI#0" expanded="false" />
-            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/userControl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -799,9 +774,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
+        <state relative-caret-position="238">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interactor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+          <folding>
+            <element signature="n#!!block;n#receivedPostback#0" expanded="false" />
+            <element signature="n#!!block;n#sendClassInitialisationButton#0" expanded="false" />
+            <element signature="n#!!block;n#sendButtonMessage#0" expanded="false" />
+            <element signature="n#!!block;n#sendGenericMessage#0" expanded="false" />
+            <element signature="n#!!block;n#sendTextMessage#0" expanded="false" />
+            <element signature="n#!!block;n#callSendAPI#0" expanded="false" />
+            <element signature="n#!!block;n#getUserInfo#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

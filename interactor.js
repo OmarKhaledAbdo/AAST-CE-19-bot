@@ -39,6 +39,7 @@ function receivedMessage(event) {
                         break;
                     default:
                         sendTextMessage(senderID, messageText);
+                        console.log("Send Echo");
                 }
             } else if (messageAttachments) {
                 sendTextMessage(senderID, "Message with attachment received");
