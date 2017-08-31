@@ -11,7 +11,6 @@ var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
 
 function isVowel(c) {
     return "aeoiu".indexOf(c) != -1;
-
 }
 
 function run() {
@@ -54,6 +53,5 @@ function run() {
         });
     });
 }
-
 
 module.exports.run = run;
