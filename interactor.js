@@ -1,6 +1,8 @@
 const userControl = require('./model/userControl.js');
 const request = require('request');
 const eventControl = require('./model/eventControl');
+require('dotenv').config();
+
 
 function receivedPostback(event) {
     var senderID = event.sender.id;
@@ -27,14 +29,8 @@ function receivedMessage(event) {
     var messageText = message.text;
     var messageAttachments = message.attachments;
 
-
     userControl.isFound(senderID, function (err, found) {
-
-        console.log("isFoundCallBack\n\n");
-
         if (found) {
-            sendTextMessage(senderID, messageText);
-
             if (messageText) {
                 switch (messageText.toLowerCase()) {
                     case 'notify':
@@ -56,12 +52,12 @@ function receivedMessage(event) {
             sendButtonMessage(senderID);
             getUserInfo(senderID, function (err, info) {
                 console.log(info);
-
                 userControl.addUser({firstName: info.first_name, lastName: info.last_name, ID: senderID});
             });
 
         }
     });
+    console.log("Received Message End");
 }
 
 
@@ -228,7 +224,7 @@ function getUserInfo(senderID, callback) {
     request({
         uri: 'https://graph.facebook.com/v2.6/' + senderID,
         qs: {
-            access_token: ACCESS_TOKEN
+            access_token: process.env.ACCESS_TOKEN
         },
         method: 'GET'
     }, function (error, response, body) {
@@ -259,6 +255,6 @@ function receivedNotificationQuery(ID) {
     userAction.notifyArrival(ID);
 }
 
-function receivedUnsubscribeQuery (ID) {
+function receivedUnsubscribeQuery(ID) {
     userAction.unsubscribe(ID);
 }

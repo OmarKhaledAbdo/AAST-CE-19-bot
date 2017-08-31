@@ -1,30 +1,21 @@
 const schedule = require('node-schedule');
 var mongoose = require('mongoose');
-var fb = require('./interactor.js');
+var interactor = require('./interactor');
 var events = mongoose.model('event');
 var users = mongoose.model('user');
-var userControl = require('./model/userControl.js');
+var userControl = require('./model/userControl');
 var eventControl = require('./model/eventControl');
 
 var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-
-function isVowel(c) {
-    return "aeoiu".indexOf(c) != -1;
-}
 
 function run() {
     console.log("Run scheduler");
 
     var rule = new schedule.RecurrenceRule();
-
     rule.dayOfWeek = [new schedule.Range(0, 6)];
-
-    rule.hour = [new schedule.Range(0, 23)];
-
-    rule.minute = [new schedule.Range(0, 59)];
-
-    rule.second = [new schedule.Range(0, 59, 30)]; //start, end, step
+    rule.hour = [8, 10, 12, 14];
+    rule.minute = [25];
+    rule.second = [0]; //start, end, step
 
 
     schedule.scheduleJob(rule, function () {
@@ -40,15 +31,11 @@ function run() {
         cursor.on('data', function (event) {
             console.log(event);
             event.studentIDs.forEach(function (recipient) {
-
-                var messageText = 'You have ' + (isVowel(event.name.charAt(0)) ? 'an ' : 'a ') + event.name +
-                    ' ' + event.type + ' in room ' + event.room + " after 5 minutes"
-
-                fb.sendTextMessage(recipient, messageText);
-                users.findOneAndUpdate({ID: recipient}, {currentEvent: event._id}).exec();
+                var messageText = 'You have ' + ("aeoiuh".indexOf(event.name.charAt(0)) != -1 ? 'an ' : 'a ') + event.name + ' ' + event.type + ' at room ' + event.room + " in 5 minutes";
+                interactor.sendTextMessage(recipient, messageText);
+                userControl.assignEvent(recipient, event._id);
             });
         });
     });
 }
-
 module.exports.run = run;

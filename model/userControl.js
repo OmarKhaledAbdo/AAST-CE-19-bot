@@ -20,7 +20,7 @@ function addUser(user) {
 
 function isFound(ID, callback) {
     users.findOne({ID: ID},  function(err, result) {
-        console.log(result);
+        console.log("ISFOUND RESULT " + result);
         if(err) {
             callback(err, null);
         }else {
@@ -29,7 +29,12 @@ function isFound(ID, callback) {
     });
 }
 
+function assignEvent(ID, eventID) {
+    users.findOneAndUpdate({ID: ID}, {currentEvent: eventID}).exec();
+}
+
 module.exports = {
     addUser: addUser,
-    isFound: isFound
+    isFound: isFound,
+    assignEvent: assignEvent
 };

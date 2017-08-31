@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');//.set('debug', true);
+const mongoose = require('mongoose').set('debug', true);
 const Schema = mongoose.Schema;
 
 var eventSchema = new Schema({
@@ -9,6 +9,5 @@ var eventSchema = new Schema({
     studentIDs: [],
     group: String
 });
-
 
 var events = module.exports = mongoose.model('event', eventSchema);

@@ -16,6 +16,7 @@
     "inits": "^1.6.2",
     "mongo": "^0.1.0",
     "mongoose": "^4.11.4",
+    "node-env-file": "^0.1.8",
     "node-schedule": "^1.2.3",
     "request": "^2.81.0",
     "sync": "^0.2.5"
