@@ -17,8 +17,8 @@ function addUserToCourse(ID, name, group) {
 
 
 function loadSchedule() {
-    addEvent("Web Engineering", "lecture", "349", "Thursday-19");  //Sunday-8
-    addEvent("Web Engineering", "lab", "G310", "Sunday-19");
+    addEvent("Web Engineering", "lecture", "349", "Thursday-20");  //Sunday-8
+    addEvent("Web Engineering", "lab", "G310", "Sunday-20");
 
     // addEvent("Computing Algorithms", "lecture", "351", "Tuesday-10");
     // addEvent("Computing Algorithms", "section", "441", "Monday-12");
