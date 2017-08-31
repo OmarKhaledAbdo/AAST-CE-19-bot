@@ -20,7 +20,7 @@ function notifyArrival (ID) {
            event.studentIDs.forEach(function(recipient) {
               if(true || recipient != user.ID) {
                   var instructorType = event.type == 'lecture' ? 'doctor' : 'teacher assistant';
-                  var messageText = user.firstName + " " + user.lastName + ' reported that the ' + instructorType + 'arrived!';
+                  var messageText = user.firstName + " " + user.lastName + ' reported that the ' + instructorType + ' arrived!';
                    interactor.sendTextMessage(recipient, messageText);
                }
            });

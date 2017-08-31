@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cceabe06-1c84-4eab-99e2-0559102dd2e2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/userAction.js" afterPath="$PROJECT_DIR$/model/userAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roomInformer.js" afterPath="$PROJECT_DIR$/roomInformer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="userAction.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/userAction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="22" column="87" lean-forward="false" selection-start-line="22" selection-start-column="87" selection-end-line="22" selection-end-column="87" />
+            <state relative-caret-position="317">
+              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -297,7 +296,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83426000" />
+    <option name="totallyTimeSpent" value="83559000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -783,8 +782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/userAction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="22" column="87" lean-forward="false" selection-start-line="22" selection-start-column="87" selection-end-line="22" selection-end-column="87" />
+        <state relative-caret-position="317">
+          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding />
         </state>
       </provider>
