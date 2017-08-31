@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cceabe06-1c84-4eab-99e2-0559102dd2e2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/interactor.js" afterPath="$PROJECT_DIR$/interactor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/userControl.js" afterPath="$PROJECT_DIR$/model/userControl.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +22,8 @@
       <file leaf-file-name="interactor.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interactor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+            <state relative-caret-position="253">
+              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
               <folding>
                 <element signature="n#!!block;n#receivedPostback#0" expanded="false" />
                 <element signature="n#!!block;n#sendClassInitialisationButton#0" expanded="false" />
@@ -293,7 +292,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87222000" />
+    <option name="totallyTimeSpent" value="87318000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -772,8 +771,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/interactor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+        <state relative-caret-position="253">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding>
             <element signature="n#!!block;n#receivedPostback#0" expanded="false" />
             <element signature="n#!!block;n#sendClassInitialisationButton#0" expanded="false" />

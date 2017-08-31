@@ -22,10 +22,12 @@ function receivedMessage(event) {
     console.log("Received message for user %d and page %d at %d with message:",
         senderID, recipientID, timeOfMessage);
     console.log(JSON.stringify(message));
-
+    
     var messageId = message.mid;
     var messageText = message.text;
     var messageAttachments = message.attachments;
+
+    sendTextMessage(senderID, messageText);
 
     userControl.isFound(senderID, function (err, found) {
         if (found) {
