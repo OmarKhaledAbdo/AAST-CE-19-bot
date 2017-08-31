@@ -24,8 +24,8 @@ function notifyArrival (ID) {
        events.findOne({_id: currentEvent}, function (err, event) {
            event.studentIDs.forEach(function(recipient) {
               if(true || recipient != user.ID) {
-                  var instructorType = event.type == 'lecture' ? 'doctor' : 'teacher assistant'
-                  var messageText = user.firstName + " " + user.lastName + ' reported that the '
+                  var instructorType = event.type == 'lecture' ? 'doctor' : 'teacher assistant';
+                  var messageText = user.firstName + " " + user.lastName + ' reported that the ';
                   instructorType + 'arrived!';
                    interactor.sendTextMessage(recipient, messageText);
                }

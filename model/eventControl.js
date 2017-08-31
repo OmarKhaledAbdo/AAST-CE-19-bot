@@ -3,8 +3,6 @@ var mongoose = require('mongoose');
 var events = mongoose.model('event');
 
 
-
-
 function addEvent(name, type, room, date, group) {
     if(typeof group == "undefined") {
         group = 'any';
@@ -19,7 +17,7 @@ function addUserToCourse(ID, name, group) {
 
 
 function loadSchedule() {
-    addEvent("Web Engineering", "lecture", "349", "Thursday-14");  //Sunday-8
+    addEvent("Web Engineering", "lecture", "349", "Thursday-19");  //Sunday-8
     addEvent("Web Engineering", "lab", "G310", "Sunday-14");
 
     // addEvent("Computing Algorithms", "lecture", "351", "Tuesday-10");
@@ -73,4 +71,3 @@ function printAll(t) {
 module.exports = {
     addUserToCourse: addUserToCourse
 };
-

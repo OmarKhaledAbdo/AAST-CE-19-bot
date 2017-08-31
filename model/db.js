@@ -1,7 +1,10 @@
 var mongoose = require( 'mongoose' );
 
-// Build the connection string
-var dbURI = 'localhost:27017/botdb';
+
+//var dbURI = 'localhost:27017/botdb';
+
+var dbURI = process.env.MONGOLAB_URI;
+
 
 // Create the database connection
 mongoose.connect(dbURI);
@@ -10,7 +13,7 @@ mongoose.connect(dbURI);
 // CONNECTION EVENTS
 // When successfully connected
 mongoose.connection.on('connected', function () {
-   //console.log('Mongoose default connection open to ' + dbURI);
+   console.log('Mongoose default connection open to ' + dbURI);
 });
 
 // If the connection throws an error
