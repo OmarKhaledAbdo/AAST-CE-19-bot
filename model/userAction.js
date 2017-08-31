@@ -5,12 +5,16 @@ const users = mongoose.model('user');
 const interactor = require('../interactor');
 
 
+function unsubscribe(ID) {
+    events.updateMany({},  {$pull: {studentIDs: ID}}).exec();
+}
+
 /* To add User Details to message */
 function notifyArrival (ID) {
     console.log("notify arrival");
     users.findOne({ID: ID}, function (err, user) {
        var currentEvent = user.currentEvent;
-       console.log("currentEvent " +  currentEvent);
+       console.log("CurrentEvent " +  currentEvent);
        if(currentEvent == null){
            return;
        }
@@ -27,7 +31,7 @@ function notifyArrival (ID) {
     });
 }
 
-
 module.exports = {
-    notifyArrival: notifyArrival
+    notifyArrival: notifyArrival,
+    unsubscribe: unsubscribe
 };

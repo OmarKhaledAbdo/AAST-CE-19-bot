@@ -5,9 +5,7 @@
     const mongoose = require('mongoose');
     const interactor = require('./interactor.js');
     const roomInformer = require('./roomInformer.js');
-
     var events = mongoose.model('event');
-
 
 
     app.use(bodyParser.json());
@@ -16,21 +14,12 @@
 
     //printAll();
 
-    function printAll() {
-        var cursor = events.find({}).cursor();
-        cursor.on('data', function(doc) {
-            console.log(doc + "\n");
-
-        })
-    }
-
     const server = app.listen(process.env.PORT || 5000, function () {
         console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
     });
 
 
     roomInformer.run();
-
 
     app.get('/webhook', function(req, res) {
       if (req.query['hub.mode'] === 'subscribe' &&

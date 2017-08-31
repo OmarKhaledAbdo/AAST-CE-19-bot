@@ -4,7 +4,6 @@ var events = mongoose.model('event');
 var users = mongoose.model('user');
 
 
-
 function printAll(t) {
     console.log("Print after state update\n");
     var cursor = t.find({}).cursor();
@@ -14,14 +13,10 @@ function printAll(t) {
     })
 }
 
-
 function addUser(user) {
     data = new users(user);
     data.save();
 }
-
-
-
 
 function isFound(ID, callback) {
     //printAll();
@@ -34,7 +29,6 @@ function isFound(ID, callback) {
         }
     });
 }
-
 
 module.exports = {
     addUser: addUser,
