@@ -1,4 +1,3 @@
-
 const userControl = require('./model/userControl.js');
 const request = require('request');
 const ACCESS_TOKEN = 'EAAbFrhuuKcoBAFVHirurUANJmdaxk95xeb7FynZC9Pzs2e4ATGtKm7gVhXrqpIxH41KjZCoVKR5PiDyFU5jBdAEeQNCEhIAyZBZCBKkIGbDGlIJi171RsdQRQkKDcxlTJ54jdOWZCj2tombZBvXNH1GkfU626kKWDgvR20kfyPZAgZDZD';
@@ -30,7 +29,7 @@ function receivedMessage(event) {
     var messageAttachments = message.attachments;
 
     userControl.isFound(senderID, function (err, found) {
-        if(found) {
+        if (found) {
             console.log("Found\n");
             if (messageText) {
                 switch (messageText) {
@@ -69,120 +68,118 @@ function sendClassInitialisationButton(recipientId) {
 function sendButtonMessage(recipientId) {
     var messageData =
 
-    {
-        "recipient": {
-        "id": recipientId
-    },
-        "message": {
-        "attachment": {
-            "type": "template",
-                "payload": {
-                "template_type": "generic",
-                    "elements": [
-                    {
-                        "title": "Swipe left/right for more options.",
-                        buttons:[
-                                            {
-                                                type: "postback",
-                                                title: "Web Engineering",
-                                                payload: "Web Engineering/any"
-                                            },
-                                            {
-                                                type: "postback",
-                                                title: "Computing Algorithms",
-                                                payload: "Computing Algorithms/any"
+        {
+            "recipient": {
+                "id": recipientId
+            },
+            "message": {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "Swipe left/right for more options.",
+                                buttons: [
+                                    {
+                                        type: "postback",
+                                        title: "Web Engineering",
+                                        payload: "Web Engineering/any"
+                                    },
+                                    {
+                                        type: "postback",
+                                        title: "Computing Algorithms",
+                                        payload: "Computing Algorithms/any"
 
-                                             }
-                                            , {
-                                                type: "postback",
-                                                title: "Data Security",
-                                                payload: "Data Security/any"
+                                    }
+                                    , {
+                                        type: "postback",
+                                        title: "Data Security",
+                                        payload: "Data Security/any"
 
-                                             }
-                                        ]
-                    },
-                    {
-                        "title": "Swipe left/right for more options.",
-                        buttons:[
-                                            {
-                                                type: "postback",
-                                                title: "Numerical Meth. (A)",
-                                                payload: "Numerical Methods/A"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Swipe left/right for more options.",
+                                buttons: [
+                                    {
+                                        type: "postback",
+                                        title: "Numerical Meth. (A)",
+                                        payload: "Numerical Methods/A"
 
-                                            }
-                                            ,
-                                            {
-                                                type: "postback",
-                                                title: "Numerical Meth. (B)",
-                                                payload: "Numerical Methods/B"
+                                    }
+                                    ,
+                                    {
+                                        type: "postback",
+                                        title: "Numerical Meth. (B)",
+                                        payload: "Numerical Methods/B"
 
-                                            }
-                                        ]
-                    },
-                    {
-                        "title": "Swipe left/right for more options.",
-                        buttons:[
-                                            {
-                                                type: "postback",
-                                                title: "Microprocessors (A)",
-                                                payload: "Microprocessors Systems/A"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Swipe left/right for more options.",
+                                buttons: [
+                                    {
+                                        type: "postback",
+                                        title: "Microprocessors (A)",
+                                        payload: "Microprocessors Systems/A"
 
-                                            },
-                                            {
-                                                type: "postback",
-                                                title: "Microprocessors (B)",
-                                                payload: "Microprocessors Systems/B"
+                                    },
+                                    {
+                                        type: "postback",
+                                        title: "Microprocessors (B)",
+                                        payload: "Microprocessors Systems/B"
 
-                                            }
-                                        ]
+                                    }
+                                ]
 
-                    },
-                        {
-                            "title": "Swipe left/right for more options.",
-                            buttons:[
+                            },
+                            {
+                                "title": "Swipe left/right for more options.",
+                                buttons: [
 
-                                {
-                                    type: "postback",
-                                    title: "System Prog. (A)",
-                                    payload: "Systems Programming/A"
+                                    {
+                                        type: "postback",
+                                        title: "System Prog. (A)",
+                                        payload: "Systems Programming/A"
 
-                                },
-                                {
-                                    type: "postback",
-                                    title: "System Prog. (B)",
-                                    payload: "Systems Programming/B"
+                                    },
+                                    {
+                                        type: "postback",
+                                        title: "System Prog. (B)",
+                                        payload: "Systems Programming/B"
 
-                                }
-                            ]
+                                    }
+                                ]
 
-                        },
+                            },
 
-                        {
-                            "title": "Swipe left/right for more options.",
-                            buttons:[
-                                                {
-                                                    type: "postback",
-                                                    title: "Database Systems (A)",
-                                                    payload: "Database Systems/A"
+                            {
+                                "title": "Swipe left/right for more options.",
+                                buttons: [
+                                    {
+                                        type: "postback",
+                                        title: "Database Systems (A)",
+                                        payload: "Database Systems/A"
 
-                                                },
-                                                {
-                                                    type: "postback",
-                                                    title: "Database Systems (B)",
-                                                    payload: "Database Systems/B"
-                                                }
-                            ]
+                                    },
+                                    {
+                                        type: "postback",
+                                        title: "Database Systems (B)",
+                                        payload: "Database Systems/B"
+                                    }
+                                ]
 
-                        }
-
-
+                            }
 
 
-                ]
+                        ]
+                    }
+                }
             }
-        }
-      }
-    };
+        };
     callSendAPI(messageData);
 }
 
@@ -205,7 +202,7 @@ function sendTextMessage(recipientId, messageText, callback) {
 function callSendAPI(messageData) {
     request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: { access_token: ACCESS_TOKEN },
+        qs: {access_token: ACCESS_TOKEN},
         method: 'POST',
         json: messageData
 
@@ -231,15 +228,15 @@ function getUserInfo(senderID, callback) {
         },
         method: 'GET'
     }, function (error, response, body) {
-        if(typeof body !== "object") {
+        if (typeof body !== "object") {
             body = JSON.parse(body);
         }
         console.log(body);
-       if(!error && response.statusCode == 200) {
-           callback(null, body);
-       } else {
-           callback(error, null);
-       }
+        if (!error && response.statusCode == 200) {
+            callback(null, body);
+        } else {
+            callback(error, null);
+        }
     });
 }
 
