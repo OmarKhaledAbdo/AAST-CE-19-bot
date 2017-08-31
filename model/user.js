@@ -1,4 +1,4 @@
-const mongoose = require('mongoose').set('debug', true);
+const mongoose = require('mongoose');//.set('debug', true);
 const Schema = mongoose.Schema;
 
 var userSchema = new Schema({

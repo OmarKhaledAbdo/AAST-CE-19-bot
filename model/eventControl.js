@@ -4,7 +4,7 @@ var events = mongoose.model('event');
 
 
 function addEvent(name, type, room, date, group) {
-    if(typeof group == "undefined") {
+    if (typeof group == "undefined") {
         group = 'any';
     }
     var newEvent = {name: name, type: type, room: room, date: date, studentIDs: [], group: group};
@@ -12,10 +12,8 @@ function addEvent(name, type, room, date, group) {
 }
 
 function addUserToCourse(ID, name, group) {
-    events.updateMany({name: name, group: group}, { $addToSet: { studentIDs: ID} }).exec(printAll(events));
+    events.updateMany({name: name, group: group}, {$addToSet: {studentIDs: ID}}).exec(printAll(events));
 }
-
-
 
 
 function loadSchedule() {
@@ -55,7 +53,6 @@ function loadSchedule() {
 }
 
 
-
 loadSchedule();
 
 //clearEvents();
@@ -68,7 +65,7 @@ function clearEvents() {
 
 function printAll(t) {
     var cursor = t.find({}).cursor();
-    cursor.on('data', function(doc) {
+    cursor.on('data', function (doc) {
         console.log(doc + "\n");
 
     })
