@@ -12,7 +12,7 @@ function addEvent(name, type, room, date, group) {
 }
 
 function addUserToCourse(ID, name, group) {
-    events.updateMany({name: name, group: group}, {$addToSet: {studentIDs: ID}}).exec(printAll(events));
+    events.updateMany({name: name, group: { $in: [group, 'any'] }}, {$addToSet: {studentIDs: ID}}).exec(printAll(events));
 }
 
 
