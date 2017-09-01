@@ -1,3 +1,5 @@
 /play.js
 /.env
 /test.js
+/.idea
+/node_modules
