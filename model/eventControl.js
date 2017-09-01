@@ -12,12 +12,11 @@ function addEvent(name, type, room, date, group) {
 }
 
 function addUserToCourse(ID, name, group) {
-    events.updateMany({name: name, group: { $in: [group, 'any'] }}, {$addToSet: {studentIDs: ID}}).exec(printAll(events));
+    events.updateMany({name: name, group: { $in: [group, 'any'] }}, {$addToSet: {studentIDs: ID}}).exec();
 }
 
 
 function loadSchedule() {
-
 
     addEvent("Web Engineering", "lecture", "349", "Saturday-8");
     addEvent("Web Engineering", "lab", "G310", "Saturday-16");
@@ -52,14 +51,6 @@ function loadSchedule() {
 
 
 loadSchedule();
-
-//clearEvents();
-
-function clearEvents() {
-    events.remove({}).exec();
-}
-
-//printAll(events);
 
 function printAll(t) {
     let cursor = t.find({}).cursor();
