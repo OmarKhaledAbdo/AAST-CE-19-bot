@@ -15,7 +15,7 @@ function run() {
     rule.dayOfWeek = [new schedule.Range(0, 6)];
     rule.hour = [8, 10, 12, 14];
     rule.minute = [new Range(0, 59)];
-    rule.second = [0]; //start, end, step
+    rule.second = [new Range(0, 59, 15)]; //start, end, step
 
 
     schedule.scheduleJob(rule, function () {

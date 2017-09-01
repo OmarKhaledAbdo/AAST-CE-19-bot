@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cceabe06-1c84-4eab-99e2-0559102dd2e2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/eventControl.js" afterPath="$PROJECT_DIR$/model/eventControl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/userControl.js" afterPath="$PROJECT_DIR$/model/userControl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/roomInformer.js" afterPath="$PROJECT_DIR$/roomInformer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -68,21 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roomInformer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="roomInformer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/roomInformer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="160">
+              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="eventControl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="eventControl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/eventControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="30" column="61" lean-forward="true" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+            <state relative-caret-position="351">
+              <caret line="33" column="23" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -169,8 +167,8 @@
         <option value="$PROJECT_DIR$/model/event.js" />
         <option value="$PROJECT_DIR$/model/user.js" />
         <option value="$PROJECT_DIR$/model/userControl.js" />
-        <option value="$PROJECT_DIR$/roomInformer.js" />
         <option value="$PROJECT_DIR$/model/eventControl.js" />
+        <option value="$PROJECT_DIR$/roomInformer.js" />
       </list>
     </option>
   </component>
@@ -301,12 +299,12 @@
       <workItem from="1501247093189" duration="46848000" />
       <workItem from="1501444418607" duration="9754000" />
       <workItem from="1504100210554" duration="26024000" />
-      <workItem from="1504267857377" duration="272000" />
+      <workItem from="1504267857377" duration="428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94742000" />
+    <option name="totallyTimeSpent" value="94898000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -724,18 +722,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/roomInformer.js">
+    <entry file="file://$PROJECT_DIR$/model/eventControl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        <state relative-caret-position="351">
+          <caret line="33" column="23" lean-forward="false" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/eventControl.js">
+    <entry file="file://$PROJECT_DIR$/roomInformer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="30" column="61" lean-forward="true" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+        <state relative-caret-position="160">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
