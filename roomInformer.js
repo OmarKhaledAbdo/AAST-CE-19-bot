@@ -14,8 +14,8 @@ function run() {
     var rule = new schedule.RecurrenceRule();
     rule.dayOfWeek = [new schedule.Range(0, 6)];
     rule.hour = [8, 10, 12, 14];
-    rule.minute = [33, 34, 35];
-    rule.second = [0, 30]; //start, end, step
+    rule.minute = [41, 42, 43, 44];
+    rule.second = [0]; //start, end, step
 
 
     schedule.scheduleJob(rule, function () {

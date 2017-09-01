@@ -20,7 +20,6 @@ function loadSchedule() {
 
     //Replaced all Sunday by Friday
 
-
     addEvent("Web Engineering", "lecture", "349", "Friday-8");  //Sunday-8
     addEvent("Web Engineering", "lab", "G310", "Friday-14");
 
@@ -34,7 +33,7 @@ function loadSchedule() {
     addEvent("Database Systems", "lecture", "349", "Wednesday-10");
     addEvent("Database Systems", "section", "241", "Monday-8", "A");
     addEvent("Database Systems", "section", "239", "Tuesday-8", "B");
-    addEvent("Database Systems", "lab", "241", "Friday-10", "A");
+    addEvent("Database Systems", "lab", "241", "Friday-14", "A");  //changed from 10 to 14
     addEvent("Database Systems", "lab", "G310", "Wednesday-14", "A");
 
     addEvent("Numerical Methods", "lecture", "351", "Friday-10");
