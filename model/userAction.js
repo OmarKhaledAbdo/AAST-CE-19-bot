@@ -13,7 +13,7 @@ function unsubscribe(ID) {
 function notifyArrival (ID) {
     console.log("notify arrival");
     users.findOne({ID: ID}, function (err, user) {
-       var currentEvent = user.currentEvent;
+       let currentEvent = user.currentEvent;
        console.log("CurrentEvent " +  currentEvent);
        if(currentEvent == null){
            return;
@@ -21,8 +21,8 @@ function notifyArrival (ID) {
        events.findOne({_id: currentEvent}, function (err, event) {
            event.studentIDs.forEach(function(recipient) {
               if(true || recipient != user.ID) {
-                  var instructorType = event.type == 'lecture' ? 'doctor' : 'teacher assistant';
-                  var messageText = user.firstName + " " + user.lastName + ' reported that the ' + instructorType + ' arrived!';
+                  let instructorType = event.type == 'lecture' ? 'doctor' : 'teacher assistant';
+                  let messageText = user.firstName + " " + user.lastName + ' reported that the ' + instructorType + ' arrived!';
                    interactor.sendTextMessage(recipient, messageText);
                }
            });

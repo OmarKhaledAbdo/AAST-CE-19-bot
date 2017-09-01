@@ -6,7 +6,7 @@ const db = require('./model/db');
 const mongoose = require('mongoose');
 const interactor = require('./interactor.js');
 const roomInformer = require('./roomInformer.js');
-var events = mongoose.model('event');
+let events = mongoose.model('event');
 
 
 // console.log("AccessToken " + process.env.ACCESS_TOKEN);
@@ -38,13 +38,13 @@ app.get('/webhook', function (req, res) {
 
 /* Handling all messenges */
 app.post('/webhook', function (req, res) {
-    var data = req.body;
+    let data = req.body;
     // Make sure this is a page subscription
     if (data.object === 'page') {
         // Iterate over each entry - there may be multiple if batched
         data.entry.forEach(function (entry) {
-            var pageID = entry.id;
-            var timeOfEvent = entry.time;
+            let pageID = entry.id;
+            let timeOfEvent = entry.time;
             // Iterate over each messaging event
             entry.messaging.forEach(function (event) {
                 if (event.message) {

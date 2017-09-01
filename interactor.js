@@ -5,29 +5,29 @@ require('dotenv').config();
 
 
 function receivedPostback(event) {
-    var senderID = event.sender.id;
-    var title = event.postback.title;
+    let senderID = event.sender.id;
+    let title = event.postback.title;
     console.log(event);
-    var courseName = event.postback.payload.split('/')[0];
-    var group = event.postback.payload.split('/')[1];
+    let courseName = event.postback.payload.split('/')[0];
+    let group = event.postback.payload.split('/')[1];
     console.log(courseName + " " + group + "\n");
     eventControl.addUserToCourse(senderID, courseName, group);
 }
 
 function receivedMessage(event) {
 
-    var senderID = event.sender.id;
-    var recipientID = event.recipient.id;
-    var timeOfMessage = event.timestamp;
-    var message = event.message;
+    let senderID = event.sender.id;
+    let recipientID = event.recipient.id;
+    let timeOfMessage = event.timestamp;
+    let message = event.message;
 
     console.log("Received message for user %d and page %d at %d with message:",
         senderID, recipientID, timeOfMessage);
     console.log(JSON.stringify(message));
 
-    var messageId = message.mid;
-    var messageText = message.text;
-    var messageAttachments = message.attachments;
+    let messageId = message.mid;
+    let messageText = message.text;
+    let messageAttachments = message.attachments;
 
     userControl.isFound(senderID, function (err, found) {
         if (found) {
@@ -66,7 +66,7 @@ function sendClassInitialisationButton(recipientId) {
 }
 
 function sendButtonMessage(recipientId) {
-    var messageData =
+    let messageData =
 
         {
             "recipient": {
@@ -188,7 +188,7 @@ function sendGenericMessage(recipientId, messageText) {
 }
 
 function sendTextMessage(recipientId, messageText, callback) {
-    var messageData = {
+    let messageData = {
         recipient: {
             id: recipientId
         },
@@ -208,8 +208,8 @@ function callSendAPI(messageData) {
 
     }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            var recipientId = body.recipient_id;
-            var messageId = body.message_id;
+            let recipientId = body.recipient_id;
+            let messageId = body.message_id;
             console.log("Successfully sent generic message with id %s to recipient %s",
                 messageId, recipientId);
         } else {
