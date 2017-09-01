@@ -59,5 +59,3 @@ function printAll(t) {
 function addStudent(ID, group) {
     events.updateMany({ group: group }, { $push: { studentIDs: ID } }, printAll);
 }
-
-
