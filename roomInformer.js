@@ -14,7 +14,7 @@ function run() {
     var rule = new schedule.RecurrenceRule();
     rule.dayOfWeek = [new schedule.Range(0, 6)];
     rule.hour = [8, 10, 12, 14];
-    rule.minute = [25];
+    rule.minute = [new Range(0, 59)];
     rule.second = [0]; //start, end, step
 
 
@@ -31,7 +31,7 @@ function run() {
         cursor.on('data', function (event) {
             console.log(event);
             event.studentIDs.forEach(function (recipient) {
-                var messageText = 'You have ' + ("aeoiuh".indexOf(event.name.charAt(0)) != -1 ? 'an ' : 'a ') + event.name + ' ' + event.type + ' at room ' + event.room + " in 5 minutes";
+                var messageText = 'You have ' + ("aeoiuh".indexOf(event.name.charAt(0)) !== -1 ? 'an ' : 'a ') + event.name + ' ' + event.type + ' at room ' + event.room + " in 5 minutes";
                 interactor.sendTextMessage(recipient, messageText);
                 userControl.assignEvent(recipient, event._id);
             });

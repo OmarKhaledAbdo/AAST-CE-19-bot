@@ -21,8 +21,8 @@ function loadSchedule() {
     //Replaced all Sunday by Friday
 
 
-    addEvent("Web Engineering", "lecture", "349", "Friday-1");  //Sunday-8
-    addEvent("Web Engineering", "lab", "G310", "Friday-20");
+    addEvent("Web Engineering", "lecture", "349", "Friday-8");  //Sunday-8
+    addEvent("Web Engineering", "lab", "G310", "Friday-14");
 
     addEvent("Computing Algorithms", "lecture", "351", "Tuesday-10");
     addEvent("Computing Algorithms", "section", "441", "Monday-12");

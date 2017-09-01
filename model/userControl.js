@@ -20,7 +20,6 @@ function addUser(user) {
 
 function isFound(ID, callback) {
     users.findOne({ID: ID},  function(err, result) {
-        console.log("ISFOUND RESULT " + result);
         if(err) {
             callback(err, null);
         }else {
