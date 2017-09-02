@@ -55,14 +55,6 @@ function loadSchedule() {
     addEvent("Systems Programming", "section", "G310", "Tuesday-12", "B");
 }
 
-function printAll(t) {
-    let cursor = t.find({}).cursor();
-    cursor.on('data', function (doc) {
-        console.log(doc + "\n");
-
-    })
-}
-
 module.exports = {
     addUserToCourse: addUserToCourse
 };

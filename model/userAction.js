@@ -1,12 +1,12 @@
-const db = require('./db');
-const mongoose = require('mongoose');
-const events = mongoose.model('event');
-const users = mongoose.model('user');
-const interactor = require('../interactor');
+const db = require('./db'),
+    mongoose = require('mongoose'),
+    events = mongoose.model('event'),
+    users = mongoose.model('user'),
+    interactor = require('../interactor');
 
 
-function unsubscribe(ID) {
-    events.updateMany({},  {$pull: {studentIDs: ID}}).exec();
+function unsubscribe(ID, cb) {
+    events.updateMany({},  {$pull: {studentIDs: ID}}).exec(cb);
 }
 
 /* To add User Details to message */

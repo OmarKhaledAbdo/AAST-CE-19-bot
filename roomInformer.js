@@ -1,9 +1,9 @@
-const schedule = require('node-schedule');
-let mongoose = require('mongoose');
-let interactor = require('./interactor');
-let events = mongoose.model('event');
-let userControl = require('./model/userControl');
-let eventControl = require('./model/eventControl');
+const schedule = require('node-schedule'),
+    mongoose = require('mongoose'),
+    interactor = require('./interactor'),
+    events = mongoose.model('event'),
+    userControl = require('./model/userControl'),
+    eventControl = require('./model/eventControl');
 
 
 const vowels = 'aeoiuh';

@@ -1,12 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
 require('dotenv').config();
-const db = require('./model/db');
-const mongoose = require('mongoose');
-const interactor = require('./interactor.js');
-const roomInformer = require('./roomInformer.js');
-let events = mongoose.model('event');
+const express = require('express'),
+    bodyParser = require('body-parser'),
+    app = express(),
+    db = require('./model/db'),
+    mongoose = require('mongoose'),
+    interactor = require('./interactor.js'),
+    roomInformer = require('./roomInformer.js');
 
 
 // console.log("AccessToken " + process.env.ACCESS_TOKEN);

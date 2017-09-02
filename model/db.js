@@ -17,12 +17,12 @@ mongoose.connection.on('connected', function () {
 
 // If the connection throws an error
 mongoose.connection.on('error', function (err) {
-    //console.log('Mongoose default connection error: ' + err);
+    console.log('Mongoose default connection error: ' + err);
 });
 
 // When the connection is disconnected
 mongoose.connection.on('disconnected', function () {
-    //console.log('Mongoose default connection disconnected');
+    console.log('Mongoose default connection disconnected');
 });
 
 // If the Node process ends, close the Mongoose connection
