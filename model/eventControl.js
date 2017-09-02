@@ -20,6 +20,7 @@ function addUserToCourse(ID, name, group) {
     events.updateMany({name: name, group: { $in: [group, 'any'] }}, {$addToSet: {studentIDs: ID}}).exec();
 }
 
+loadSchedule();
 
 function loadSchedule() {
 
