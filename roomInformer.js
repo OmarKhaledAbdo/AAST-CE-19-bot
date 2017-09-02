@@ -14,7 +14,7 @@ function run() {
     let rule = new schedule.RecurrenceRule();
     rule.dayOfWeek = [new schedule.Range(0, 6)];
     rule.hour = [8, 10, 12, 14];
-    rule.minute = 25;
+    rule.minute = 48;
     //rule.second = 0; //start, end, step
 
 
