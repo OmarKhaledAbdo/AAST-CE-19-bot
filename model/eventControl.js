@@ -31,10 +31,10 @@ function loadSchedule() {
     addEvent("Database Systems", "lecture", "349", "Wednesday-10");
     addEvent("Database Systems", "section", "241", "Monday-8", "A");
     addEvent("Database Systems", "section", "239", "Tuesday-8", "B");
-    addEvent("Database Systems", "lab", "241", "Saturday-14", "A");  //changed from 10 to 14
+    addEvent("Database Systems", "lab", "241", "Saturday-14", "A");  //changed from 10 to 14, 10 is right
     addEvent("Database Systems", "lab", "G310", "Wednesday-14", "A");
 
-    addEvent("Numerical Methods", "lecture", "351", "Saturday-10");
+    addEvent("Numerical Methods", "lecture", "351", "Saturday-10");  //write Monday instead of Saturday
     addEvent("Numerical Methods", "section", "441", "Tuesday-8", "A");
     addEvent("Numerical Methods", "section", "349", "Thursday-12", "B");
 
@@ -50,7 +50,7 @@ function loadSchedule() {
 }
 
 
-loadSchedule();
+//loadSchedule();
 
 function printAll(t) {
     let cursor = t.find({}).cursor();
