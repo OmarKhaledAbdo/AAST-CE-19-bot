@@ -161,37 +161,17 @@ function receivedMessage(event) {
     let messageText = message.text;
     let messageAttachments = message.attachments;
 
-    sendTextMessage(senderID, messageText);
+    //sendTextMessage(senderID, messageText);
 
-    userControl.isFound(senderID, function (err, found) {
-        if (found) {
-            if (messageText) {
-                switch (messageText.toLowerCase()) {
-                    case 'notify':
-                        receivedNotificationQuery(senderID);
-                        break;
-                    case 'unsubscribe':
-                        receivedUnsubscribeQuery(senderID);
-                        break;
-                    default:
-                        sendTextMessage(senderID, messageText);
-                        console.log("Send Echo");
-                }
-            } else if (messageAttachments) {
-                sendTextMessage(senderID, "Message with attachment received");
-            }
-        } else {
-            messageText = 'Choose your registered courses';
-            sendTextMessage(senderID, messageText);
-            sendCourseRegistrationMessage(senderID);
-            getUserInfo(senderID, function (err, info) {
-                console.log(info);
-                userControl.addUser({firstName: info.first_name, lastName: info.last_name, ID: senderID});
-            });
+    if (messageText) {
+        const messageText = 'Sorry, I\'m a quite bad communicator, use the menu to tell me exactly want you want!';
+        sendTextMessage(senderID, messageText);
+    } else if (messageAttachments) {
+        sendTextMessage(senderID, 'Message with attachment received');
+    }
+}
 
-        }
-    });
-    console.log("Received Message End");
+    console.log('Received Message End');
 }
 
 

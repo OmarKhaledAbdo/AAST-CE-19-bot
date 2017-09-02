@@ -25,7 +25,7 @@ roomInformer.run();
 
 app.get('/webhook', function (req, res) {
     if (req.query['hub.mode'] === 'subscribe' &&
-        req.query['hub.verify_token'] === '1997') {
+        req.query['hub.verify_token'] === process.env.VERIFICATION_KEY) {
         console.log("Validating webhook");
         res.status(200).send(req.query['hub.challenge']);
     } else {
