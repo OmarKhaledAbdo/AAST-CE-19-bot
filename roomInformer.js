@@ -15,7 +15,7 @@ module.exports.run = function () {
     let rule = new schedule.RecurrenceRule();
     rule.dayOfWeek = [new schedule.Range(0, 6)];  //start, end, step(optional)
     rule.hour = [8, 10, 12, 14];
-    rule.minute = 20;
+    rule.minute = 35;
     //rule.second = 0;
 
     schedule.scheduleJob(rule, function () {
