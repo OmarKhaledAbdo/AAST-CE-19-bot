@@ -1,9 +1,5 @@
-var mongoose = require('mongoose');
-
-
-// Build the connection string
-
-var dbURI = process.env.MONGODB_URI;
+const mongoose = require('mongoose'),
+    dbURI = process.env.MONGODB_URI;
 
 // Create the database connection
 mongoose.connect(dbURI);

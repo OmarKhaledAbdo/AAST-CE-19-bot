@@ -3,9 +3,10 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     app = express(),
     db = require('./model/db'),
+    eventControl = require('./model/eventControl'),
     mongoose = require('mongoose'),
-    interactor = require('./interactor.js'),
-    roomInformer = require('./roomInformer.js');
+    interactor = require('./interactor'),
+    roomInformer = require('./roomInformer');
 
 
 // console.log("AccessToken " + process.env.ACCESS_TOKEN);
@@ -22,6 +23,8 @@ const server = app.listen(process.env.PORT || 5000, function () {
 
 
 roomInformer.run();
+eventControl.loadSchedule();
+
 
 app.get('/webhook', function (req, res) {
     if (req.query['hub.mode'] === 'subscribe' &&
@@ -33,7 +36,6 @@ app.get('/webhook', function (req, res) {
         res.sendStatus(403);
     }
 });
-
 
 /* Handling all messenges */
 app.post('/webhook', function (req, res) {

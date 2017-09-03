@@ -1,7 +1,10 @@
 const userControl = require('./model/userControl.js'),
       request = require('request'),
       eventControl = require('./model/eventControl');
+      FacebookAPI = require('./FacebookAPI');
 require('dotenv').config();
+
+
 
 const courseButtonMessage = {
     "attachment": {
@@ -10,7 +13,7 @@ const courseButtonMessage = {
             "template_type": "generic",
             "elements": [
                 {
-                    "title": "Swipe left/right for more options.",
+                    "title": "Swipe right for more options.",
                     buttons: [
                         {
                             type: "postback",
@@ -88,7 +91,7 @@ const courseButtonMessage = {
                 },
 
                 {
-                    "title": "Swipe left/right for more options.",
+                    "title": "Swipe left for more options.",
                     buttons: [
                         {
                             type: "postback",
@@ -111,10 +114,8 @@ const courseButtonMessage = {
     }
 };
 
-
-
-
 function receivedPostback(event) {
+
     let senderID = event.sender.id;
     let title = event.postback.title;
     let payload = event.postback.payload;
@@ -129,21 +130,13 @@ function receivedPostback(event) {
         case 'unsubscribe':
             receivedUnsubscribeQuery(senderID);
             break;
+        case  'notify':
+            receivedNotificationQuery(senderID);
+            break;
         default:
             receivedCourseRegistration(senderID, payload);
-        //case ''
     }
-
-   console.log(event + "\n");
-
-
-    console.log(event);
-    let courseName = event.postback.payload.split('/')[0];
-    let group = event.postback.payload.split('/')[1];
-    console.log(courseName + " " + group + "\n");
-    eventControl.addUserToCourse(senderID, courseName, group);
 }
-
 
 
 function receivedMessage(event) {
@@ -152,28 +145,21 @@ function receivedMessage(event) {
     let recipientID = event.recipient.id;
     let timeOfMessage = event.timestamp;
     let message = event.message;
+    let messageId = message.mid;
+    let messageText = message.text;
+    let messageAttachments = message.attachments;
+
 
     console.log("Received message for user %d and page %d at %d with message:",
         senderID, recipientID, timeOfMessage);
     console.log(JSON.stringify(message));
 
-    let messageId = message.mid;
-    let messageText = message.text;
-    let messageAttachments = message.attachments;
 
-    //sendTextMessage(senderID, messageText);
-
-    if (messageText) {
-        const messageText = 'Sorry, I\'m a quite bad communicator, use the menu to tell me exactly want you want!';
+    if (messageText || messageAttachments) {
+        const messageText = 'Sorry, I\'m a quite bad communicator, use the menu to tell me exactly what you want!';
         sendTextMessage(senderID, messageText);
-    } else if (messageAttachments) {
-        sendTextMessage(senderID, 'Message with attachment received');
     }
 }
-
-    console.log('Received Message End');
-}
-
 
 function sendCourseRegistrationMessage(recipientId) {
 
@@ -184,11 +170,7 @@ function sendCourseRegistrationMessage(recipientId) {
         "message": courseButtonMessage
     };
 
-    callSendAPI(messageData);
-}
-
-function sendGenericMessage(recipientId, messageText) {
-    // To be expanded in later sections
+    FacebookAPI.callSendAPI(messageData);
 }
 
 function sendTextMessage(recipientId, messageText, callback) {
@@ -200,55 +182,13 @@ function sendTextMessage(recipientId, messageText, callback) {
             text: messageText
         }
     };
-    callSendAPI(messageData);
-}
-
-function callSendAPI(messageData) {
-    request({
-        uri: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: process.env.ACCESS_TOKEN},
-        method: 'POST',
-        json: messageData
-
-    }, function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            let recipientId = body.recipient_id;
-            let messageId = body.message_id;
-            console.log("Successfully sent generic message with id %s to recipient %s",
-                messageId, recipientId);
-        } else {
-            console.error("Unable to send message.");
-            //console.error(response);
-            console.error(error);
-        }
-    });
-}
-
-function getUserInfo(senderID, callback) {
-    request({
-        uri: 'https://graph.facebook.com/v2.6/' + senderID,
-        qs: {
-            access_token: process.env.ACCESS_TOKEN
-        },
-        method: 'GET'
-    }, function (error, response, body) {
-        if (typeof body !== "object") {
-            body = JSON.parse(body);
-        }
-        console.log(body);
-        if (!error && response.statusCode == 200) {
-            callback(null, body);
-        } else {
-            callback(error, null);
-        }
-    });
+    FacebookAPI.callSendAPI(messageData);
 }
 
 
 module.exports = {
     receivedMessage: receivedMessage,
     sendTextMessage: sendTextMessage,
-    getUserInfo: getUserInfo,
     receivedPostback: receivedPostback
 };
 
@@ -261,13 +201,13 @@ function receivedNotificationQuery(ID) {
 
 function receivedUnsubscribeQuery(ID) {
     userAction.unsubscribe(ID, function () {
-        const messageText = "You have Successfully unsubscribed from all your registered courses, you won't receive and notifications anymore and you won't be able to issue any notifications!"
+        const messageText = "You have Successfully unsubscribed from all your registered courses, you won't receive any notifications anymore and you won't be able to issue any further notifications!"
         sendTextMessage(ID, messageText);
     });
 }
 
 function receivedGetStarted(senderID) {
-    getUserInfo(senderID, function (err, info) {
+    FacebookAPI.callUserInfoAPI(senderID, function (err, info) {
         const messageText = 'Hi ' + info.first_name + ', start by clicking on the menu and subscribe to your registered courses!';
         sendTextMessage(senderID, messageText);
         userControl.addUser({firstName: info.first_name, lastName: info.last_name, ID: senderID});

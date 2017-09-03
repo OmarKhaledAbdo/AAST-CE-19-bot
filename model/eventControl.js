@@ -1,26 +1,20 @@
-const db = require('./db');
-let mongoose = require('mongoose');
-let events = mongoose.model('event');
+const db = require('./db'),
+    mongoose = require('mongoose'),
+    events = mongoose.model('event');
 
 
 function addEvent(name, type, room, date, group) {
+
     if (typeof group === 'undefined') {
         group = 'any';
     }
 
     /* Attempts to insert a new event if a similar one is not present, excluding studentID from the comparison */
-
     let newEvent = {name: name, type: type, room: room, date: date, studentIDs: [], group: group};
     let queryEvent = {name: name, type: type, room: room, date: date, group: group};
 
     events.findOneAndUpdate(queryEvent, newEvent, {upsert: true}).exec();
 }
-
-function addUserToCourse(ID, name, group) {
-    events.updateMany({name: name, group: { $in: [group, 'any'] }}, {$addToSet: {studentIDs: ID}}).exec();
-}
-
-loadSchedule();
 
 function loadSchedule() {
 
@@ -53,8 +47,13 @@ function loadSchedule() {
     addEvent("Systems Programming", "lecture", "351", "Thursday-10");
     addEvent("Systems Programming", "section", "241", "Monday-12", "A");
     addEvent("Systems Programming", "section", "G310", "Tuesday-12", "B");
+
+    /* Automatic control to be added */
 }
 
 module.exports = {
-    addUserToCourse: addUserToCourse
+    addUserToCourse: function (ID, name, group) {
+        events.updateMany({name: name, group: { $in: [group, 'any'] }}, {$addToSet: {studentIDs: ID}}).exec();
+    },
+    loadSchedule: loadSchedule
 };
