@@ -170,7 +170,7 @@ function sendCourseRegistrationMessage(recipientId) {
     FacebookAPI.callSendAPI(messageData);
 }
 
-function sendTextMessage(recipientId, messageText, callback) {
+function sendTextMessage(recipientId, messageText) {
     let messageData = {
         recipient: {
             id: recipientId
