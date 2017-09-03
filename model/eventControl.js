@@ -21,6 +21,8 @@ function addEvent(name, type, room, date, group) {
 }
 
 function loadSchedule() {
+
+    //addEvent("Web Engineering", "lecture", "349", "Sunday-" + (new date()).);
     addEvent("Web Engineering", "lecture", "349", "Sunday-8");
     addEvent("Web Engineering", "lab", "G310", "Sunday-14");
 

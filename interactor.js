@@ -207,7 +207,7 @@ function receivedGetStarted(senderID) {
     FacebookAPI.callUserInfoAPI(senderID, function (err, info) {
         const messageText = 'Hi ' + info.first_name + ', start by clicking on the menu and subscribe to your registered courses!';
         sendTextMessage(senderID, messageText);
-        userControl.addUser({firstName: info.first_name, lastName: info.last_name, ID: senderID});
+        userControl.addUser({firstName: info.first_name, lastName: info.last_name, ID: senderID, currentEvent: null});
     });
 }
 
