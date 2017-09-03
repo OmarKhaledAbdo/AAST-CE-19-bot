@@ -33,5 +33,3 @@ module.exports = {
         users.updateOne({ID: ID}, {$set: {currentEvent: null}}).exec();
     }
 };
-
-/* To add User Details to message */
