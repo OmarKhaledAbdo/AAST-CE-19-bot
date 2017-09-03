@@ -30,6 +30,7 @@ module.exports = {
     ,
     unsubscribe: function (ID, cb) {
         events.updateMany({},  {$pull: {studentIDs: ID}}).exec(cb);
+        users.updateOne({ID: ID}, {$set: {currentEvent: null}}).exec();
     }
 };
 
