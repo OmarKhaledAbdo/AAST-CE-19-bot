@@ -12,7 +12,7 @@ function addEvent(name, type, room, date, group) {
     let newEvent = {name: name, type: type, room: room, date: date, studentIDs: [], group: group};
     let queryEvent = {name: name, type: type, room: room, date: date, group: group};
 
-    events.findOneAndUpdate(queryEvent, newEvent, {upsert: true}).exec();
+    events.findOne(queryEvent, newEvent, {upsert: true}).exec();
 }
 
 function loadSchedule() {
