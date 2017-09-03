@@ -5,7 +5,6 @@ const userControl = require('./model/userControl.js'),
 require('dotenv').config();
 
 
-
 const courseButtonMessage = {
     "attachment": {
         "type": "template",
@@ -114,6 +113,7 @@ const courseButtonMessage = {
     }
 };
 
+
 function receivedPostback(event) {
 
     let senderID = event.sender.id;
@@ -138,7 +138,6 @@ function receivedPostback(event) {
     }
 }
 
-
 function receivedMessage(event) {
 
     let senderID = event.sender.id;
@@ -162,14 +161,12 @@ function receivedMessage(event) {
 }
 
 function sendCourseRegistrationMessage(recipientId) {
-
     const messageData = {
         "recipient": {
             "id": recipientId
         },
         "message": courseButtonMessage
     };
-
     FacebookAPI.callSendAPI(messageData);
 }
 

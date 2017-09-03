@@ -8,7 +8,6 @@ function addEvent(name, type, room, date, group) {
     if (typeof group === 'undefined') {
         group = 'any';
     }
-
     /* Attempts to insert a new event if a similar one is not present, excluding studentID from the comparison */
     let newEvent = {name: name, type: type, room: room, date: date, studentIDs: [], group: group};
     let queryEvent = {name: name, type: type, room: room, date: date, group: group};
@@ -17,7 +16,6 @@ function addEvent(name, type, room, date, group) {
 }
 
 function loadSchedule() {
-
     addEvent("Web Engineering", "lecture", "349", "Sunday-8");
     addEvent("Web Engineering", "lab", "G310", "Sunday-14");
 
