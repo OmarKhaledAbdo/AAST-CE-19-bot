@@ -19,7 +19,7 @@ module.exports = {
                     /* Have not decided yet whether I'll send the message to the person who issued the notification or not*/
                     if(true || recipient != user.ID) {
                         let instructorType = event.type === 'lecture' ? 'doctor' : 'teacher assistant';
-                        let messageText = user.firstName + " " + user.lastName + ' reported that your' + instructorType + ' has arrived!';
+                        let messageText = user.firstName + " " + user.lastName + ' reported that your ' + instructorType + ' has arrived!';
                         interactor.sendTextMessage(recipient, messageText);
                     }
                 });

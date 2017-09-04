@@ -155,7 +155,7 @@ function receivedMessage(event) {
 
 
     if (messageText || messageAttachments) {
-        const messageText = 'Sorry, I\'m a quite bad communicator, use the menu to tell me exactly what you want!';
+        const messageText = 'Sorry, I\'m  quite a bad communicator, use the menu to tell me exactly what you want!';
         sendTextMessage(senderID, messageText);
     }
 }
@@ -189,8 +189,8 @@ module.exports = {
     receivedPostback: receivedPostback
 };
 
-const userAction = require('./model/userAction');
 
+const userAction = require('./model/userAction');
 
 function receivedNotificationQuery(ID) {
     userAction.notifyArrival(ID);
@@ -211,11 +211,11 @@ function receivedGetStarted(senderID) {
     });
 }
 
+
 function receivedSubscribeQuery(senderID) {
     sendCourseRegistrationMessage(senderID);
 
 }
-
 function receivedCourseRegistration(senderID, query) {
     let courseName = query.split('/')[0];
     let group = query.split('/')[1];
