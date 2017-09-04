@@ -9,7 +9,7 @@ module.exports = {
         users.findOne({ID: ID}, function (err, user) {
             let currentEvent = user.currentEvent;
             console.log("CurrentEvent " +  currentEvent);
-            if(currentEvent === null){
+            if(currentEvent == null){
                 const messageText = 'Sorry, currently there are no courses running!';
                 interactor.sendTextMessage(ID, messageText);
                 return;

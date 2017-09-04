@@ -39,9 +39,7 @@ module.exports.run = function () {
 
                 /* Remove the event to prevent any further notifications */
                 const slotDuration = 100 * 60 * 1000;
-                setTimeout(function () {
-                    userControl(userControl.assignEvent(recipient, null));
-                }, slotDuration);
+                setTimeout(userControl.assignEvent(recipient, null), slotDuration);
 
             });
         });
