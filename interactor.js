@@ -155,7 +155,7 @@ function receivedMessage(event) {
 
 
     if (messageText || messageAttachments) {
-        const messageText = 'Sorry, I\'m  quite a bad communicator, use the menu to tell me exactly what you want!';
+        const messageText = 'Sorry, I\'m a quite bad communicator, use the menu to tell me exactly what you want!';
         sendTextMessage(senderID, messageText);
     }
 }
