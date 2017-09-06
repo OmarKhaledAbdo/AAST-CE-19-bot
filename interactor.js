@@ -134,7 +134,7 @@ function receivedPostback(event) {
             receivedNotificationQuery(senderID);
             break;
         default:
-            receivedCourseRegistration(senderID, payload);
+            receivedCourseRegistrationQuery(senderID, payload);
     }
 }
 
@@ -214,11 +214,14 @@ function receivedGetStarted(senderID) {
 
 function receivedSubscribeQuery(senderID) {
     sendCourseRegistrationMessage(senderID);
-
 }
-function receivedCourseRegistration(senderID, query) {
+
+
+function receivedCourseRegistrationQuery(senderID, query) {
     let courseName = query.split('/')[0];
     let group = query.split('/')[1];
     console.log(courseName + " " + group + "\n");
     eventControl.addUserToCourse(senderID, courseName, group);
+    const messageText = 'You have successfully subscribed to ' + courseName + ' in group ' + group;
+    sendTextMessage(senderID, messageText);
 }
