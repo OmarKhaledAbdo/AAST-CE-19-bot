@@ -11,8 +11,8 @@ module.exports.run = function () {
 
     let rule = new schedule.RecurrenceRule();
     rule.dayOfWeek = [new schedule.Range(0, 6)];  //start, end, step(optional)
-    rule.hour = [8, 10, 12, 14];
-    rule.minute = [20];
+    rule.hour = [8, 10, 12, 14, 19];
+    rule.minute = [0, 20];
     rule.second = 0;
 
     schedule.scheduleJob(rule, function () {
@@ -23,8 +23,7 @@ module.exports.run = function () {
             return weekdays[curTime.getDay()] + '-' + curTime.getHours();
         })();
 
-        console.log("Current Time " + curTime + "\n\n");
-
+        //console.log("Current Time " + curTime + "\n\n");
         let cursor = events.find({date: curTime}).cursor();
 
         cursor.on('data', function (event) {
@@ -36,7 +35,6 @@ module.exports.run = function () {
                 interactor.sendTextMessage(recipient, messageText);
                 /* Augments the current event for each user to enable further notifications related to the event */
                 userControl.assignEvent(recipient, event._id);
-
                 /* Remove the event to prevent any further notifications */
                 const slotDuration = 100 * 60 * 1000;
                 setTimeout(function () {
