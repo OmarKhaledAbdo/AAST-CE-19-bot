@@ -105,7 +105,25 @@ const courseButtonMessage = {
                         }
                     ]
 
+                },
+                {
+                    "title": "Swipe left for more options.",
+                    buttons: [
+                        {
+                            type: "postback",
+                            title: "Automatic Control (A)",
+                            payload: "Automatic Control Systems/A"
+
+                        },
+                        {
+                            type: "postback",
+                            title: "Automatic Control (B)",
+                            payload: "Automatic Control Systems/B"
+                        }
+                    ]
+
                 }
+
 
 
             ]

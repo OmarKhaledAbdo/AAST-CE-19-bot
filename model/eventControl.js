@@ -22,7 +22,6 @@ function addEvent(name, type, room, date, group) {
 
 function loadSchedule() {
 
-    //addEvent("Web Engineering", "lecture", "349", "Sunday-" + (new date()).);
     addEvent("Web Engineering", "lecture", "349", "Sunday-8");
     addEvent("Web Engineering", "lab", "G310", "Sunday-14");
 
@@ -37,7 +36,7 @@ function loadSchedule() {
     addEvent("Database Systems", "section", "241", "Monday-8", "A");
     addEvent("Database Systems", "section", "239", "Tuesday-8", "B");
     addEvent("Database Systems", "lab", "241", "Sunday-10", "A");
-    addEvent("Database Systems", "lab", "G310", "Wednesday-14", "A");
+    addEvent("Database Systems", "lab", "G310", "Wednesday-14", "B");
 
     addEvent("Numerical Methods", "lecture", "351", "Monday-10");
     addEvent("Numerical Methods", "section", "441", "Tuesday-8", "A");
@@ -52,6 +51,12 @@ function loadSchedule() {
     addEvent("Systems Programming", "lecture", "351", "Thursday-10");
     addEvent("Systems Programming", "section", "241", "Monday-12", "A");
     addEvent("Systems Programming", "section", "G310", "Tuesday-12", "B");
+
+    addEvent("Automatic Control Systems", "lecture", "349", "Thursday-8");
+    addEvent("Automatic Control Systems", "section", "308", "Thursday-12", "A");
+    addEvent("Automatic Control Systems", "section", "308", "Thursday-14", "B");
+
+
 
     /* Automatic control to be added */
 }
