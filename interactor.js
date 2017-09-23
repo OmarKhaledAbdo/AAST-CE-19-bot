@@ -38,14 +38,14 @@ const courseButtonMessage = {
                     buttons: [
                         {
                             type: "postback",
-                            title: "Numerical Meth. (A)",
+                            title: "Numerical Meth. A",
                             payload: "Numerical Methods/A"
 
                         }
                         ,
                         {
                             type: "postback",
-                            title: "Numerical Meth. (B)",
+                            title: "Numerical Meth. B",
                             payload: "Numerical Methods/B"
 
                         }
@@ -56,13 +56,13 @@ const courseButtonMessage = {
                     buttons: [
                         {
                             type: "postback",
-                            title: "Microprocessors (A)",
+                            title: "Microprocessors A",
                             payload: "Microprocessors Systems/A"
 
                         },
                         {
                             type: "postback",
-                            title: "Microprocessors (B)",
+                            title: "Microprocessors B",
                             payload: "Microprocessors Systems/B"
 
                         }
@@ -75,13 +75,13 @@ const courseButtonMessage = {
 
                         {
                             type: "postback",
-                            title: "System Prog. (A)",
+                            title: "System Prog. A",
                             payload: "Systems Programming/A"
 
                         },
                         {
                             type: "postback",
-                            title: "System Prog. (B)",
+                            title: "System Prog. B",
                             payload: "Systems Programming/B"
 
                         }
@@ -94,13 +94,13 @@ const courseButtonMessage = {
                     buttons: [
                         {
                             type: "postback",
-                            title: "Database Systems (A)",
+                            title: "Database Systems A",
                             payload: "Database Systems/A"
 
                         },
                         {
                             type: "postback",
-                            title: "Database Systems (B)",
+                            title: "Database Systems B",
                             payload: "Database Systems/B"
                         }
                     ]
@@ -111,13 +111,13 @@ const courseButtonMessage = {
                     buttons: [
                         {
                             type: "postback",
-                            title: "Automatic Control (A)",
+                            title: "Automatic Control A",
                             payload: "Automatic Control Systems/A"
 
                         },
                         {
                             type: "postback",
-                            title: "Automatic Control (B)",
+                            title: "Automatic Control B",
                             payload: "Automatic Control Systems/B"
                         }
                     ]
