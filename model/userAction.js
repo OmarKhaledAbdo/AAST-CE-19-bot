@@ -7,6 +7,9 @@ const db = require('./db'),
 module.exports = {
     notifyArrival: function (ID) {
         users.findOne({ID: ID}, function (err, user) {
+            if(user === null) {
+                return;
+            }
             let currentEvent = user.currentEvent;
             console.log("CurrentEvent " +  currentEvent);
             if(currentEvent == null){
@@ -18,7 +21,7 @@ module.exports = {
                 event.studentIDs.forEach(function(recipient) {
                     /* Have not decided yet whether I'll send the message to the person who issued the notification or not*/
                     if(true || recipient != user.ID) {
-                        let instructorType = event.type === 'lecture' ? 'doctor' : 'teacher assistant';
+                        let instructorType = event.type === 'lecture' ? 'lecturer' : 'teacher assistant';
                         let messageText = user.firstName + " " + user.lastName + ' reported that your ' + instructorType + ' has arrived!';
                         interactor.sendTextMessage(recipient, messageText);
                     }
