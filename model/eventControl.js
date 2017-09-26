@@ -50,7 +50,7 @@ function loadSchedule() {
 
     addEvent("Systems Programming", "lecture", "351", "Thursday-10");
     addEvent("Systems Programming", "section", "241", "Monday-12", "A");
-    addEvent("Systems Programming", "section", "G310", "Tuesday-12", "B");
+    addEvent("Systems Programming", "section", "G110", "Tuesday-12", "B");
 
     addEvent("Automatic Control Systems", "lecture", "349", "Thursday-8");
     addEvent("Automatic Control Systems", "section", "308", "Thursday-12", "A");
