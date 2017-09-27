@@ -36,7 +36,7 @@ function loadSchedule() {
     addEvent("Database Systems", "section", "241", "Monday-8", "A");
     addEvent("Database Systems", "section", "239", "Tuesday-8", "B");
     addEvent("Database Systems", "lab", "241", "Sunday-10", "A");
-    addEvent("Database Systems", "lab", "G310", "Wednesday-14", "B");
+    addEvent("Database Systems", "lab", "239", "Wednesday-12", "B");
 
     addEvent("Numerical Methods", "lecture", "351", "Monday-10");
     addEvent("Numerical Methods", "section", "441", "Tuesday-8", "A");

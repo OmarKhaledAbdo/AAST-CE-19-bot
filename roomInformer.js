@@ -5,8 +5,6 @@ const schedule = require('node-schedule'),
     userControl = require('./model/userControl'),
     eventControl = require('./model/eventControl');
 
-
-
 module.exports.run = function () {
 
     let rule = new schedule.RecurrenceRule();
