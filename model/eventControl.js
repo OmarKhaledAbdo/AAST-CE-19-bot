@@ -39,11 +39,11 @@ function loadSchedule() {
     addEvent("Database Systems", "lab", "239", "Wednesday-12", "B");
 
     addEvent("Numerical Methods", "lecture", "351", "Monday-10");
-    addEvent("Numerical Methods", "section", "441", "Tuesday-8", "A");
+    addEvent("Numerical Methods", "section", "310G", "Tuesday-8", "A");
     addEvent("Numerical Methods", "section", "349", "Thursday-12", "B");
 
     addEvent("Microprocessors Systems", "lecture", "349", "Wednesday-8");
-    addEvent("Microprocessors Systems", "section", "326", "Sunday-12", "A");
+    addEvent("Microprocessors Systems", "section", "241", "Sunday-12", "A");
     addEvent("Microprocessors Systems", "section", "G310", "Sunday-8", "B");
     addEvent("Microprocessors Systems", "lab", "326", "Tuesday-10", "A");
     addEvent("Microprocessors Systems", "lab", "326", "Monday-8", "B");

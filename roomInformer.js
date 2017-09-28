@@ -28,8 +28,8 @@ module.exports.run = function () {
             console.log(event);
 
             event.studentIDs.forEach(function (recipient) {
-                const vowels = 'aeoiuh';
-                let messageText = 'You have ' + (vowels.indexOf(event.name.charAt(0)) !== -1 ? 'an ' : 'a ') + event.name + ' ' + event.type + ' at room ' + event.room + " in 10 minutes!";
+                const vowels = 'AEOIUH';
+                let messageText = 'You have ' + (vowels.indexOf(event.name.charAt(0)) !== -1 ? 'an ' : 'a ') + event.name + ' ' + event.type + ' at room ' + event.room + " in 5 minutes!";
                 interactor.sendTextMessage(recipient, messageText);
                 /* Augments the current event for each user to enable further notifications related to the event */
                 userControl.assignEvent(recipient, event._id);
